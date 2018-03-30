@@ -1,5 +1,9 @@
 require('babel-register')();
 
+global.requestAnimationFrame = function (cb) {
+    return setTimeout(cb, 0);
+};
+
 var jsdom = require('jsdom').jsdom;
 
 var exposedProperties = ['window', 'navigator', 'document'];
